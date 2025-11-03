@@ -1,0 +1,642 @@
+:root{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  max-width: 1100px; /* Sets a maximum width */
+  margin: 0 auto; /* A trick to center a block element */
+}
+
+.nav-links-lists {
+  display: flex;
+  gap: 30px;
+}
+
+section {
+  padding: 80px 50px;
+  max-width: 1100px; /* Sets a maximum width */
+  margin: 0 auto; /* A trick to center a block element */
+}
+.skills-list {
+    display: flex; /* Makes the list items horizontal */
+    justify-content: space-between; /* Centers the whole group of skills on the page */
+    gap: 30px; /* Adds space between each skill */
+    text-align: center; /* Centers the text within each item */
+    border-top: 1px solid #333333; /* A thin, dark-gray line on top */
+    border-bottom: 1px solid #333333; /* A thin, dark-gray line on bottom */
+
+    /* Adjust padding to be inside the borders */
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* --- LAYOUT: About Me Section Flexbox --- */
+.about-me-section {
+    display: flex; 
+    justify-content: space-between; /* Spreads the two columns */
+    gap: 100px; /* Adds space between the two columns */
+    max-width: 1100px; /* Sets a maximum width */
+    margin: 0 auto; /* A trick to center a block element */
+  }
+
+
+/* Give the content containers equal space */
+.about-me-left, .about-me-right {
+    flex: 1; /* Allows both columns to take up equal available space */
+}
+.stats-container {
+    display: flex;
+    justify-content: space-between; /* Spreads the three stats evenly across the width */
+    margin-top: 20px;
+    text-align: center; /* Centers the text (value and description) within each stat item */
+}
+
+/* Ensure each item takes up equal space */
+.stat-item {
+    flex: 1; 
+    padding: 0 10px;
+}
+
+/* Give the stat values a bit more visual weight */
+.stat-value {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Ensure each item takes up equal space */
+.stat-item {
+    flex: 1; 
+    padding: 0 10px;
+}
+
+/* Give the stat values a bit more visual weight */
+.stat-value {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* --- Styling the About Me Services --- */
+
+/* 1. Update the parent container */
+/* --- Styling the About Me Services --- */
+
+/* 1. Update the parent container */
+.about-me-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;:root{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  max-width: 1100px; /* Sets a maximum width */
+  margin: 0 auto; /* A trick to center a block element */
+}
+
+.nav-links-lists {
+  display: flex;
+  gap: 30px;
+}
+
+section {
+  padding: 80px 50px;
+  max-width: 1100px; /* Sets a maximum width */
+  margin: 0 auto; /* A trick to center a block element */
+}
+.skills-list {
+    display: flex; /* Makes the list items horizontal */
+    justify-content: space-between; /* Centers the whole group of skills on the page */
+    gap: 30px; /* Adds space between each skill */
+    text-align: center; /* Centers the text within each item */
+    border-top: 1px solid #333333; /* A thin, dark-gray line on top */
+    border-bottom: 1px solid #333333; /* A thin, dark-gray line on bottom */
+
+    /* Adjust padding to be inside the borders */
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* --- LAYOUT: About Me Section Flexbox --- */
+.about-me-section {
+    display: flex; 
+    justify-content: space-between; /* Spreads the two columns */
+    gap: 40px; /* Adds space between the two columns */
+    max-width: 1100px; /* Sets a maximum width */
+    margin: 0 auto; /* A trick to center a block element */
+  }
+
+
+/* Give the content containers equal space */
+.about-me-left, .about-me-right {
+    flex: 1; /* Allows both columns to take up equal available space */
+}
+.stats-container {
+    display: flex;
+    justify-content: space-between; /* Spreads the three stats evenly across the width */
+    margin-top: 20px;
+    text-align: center; /* Centers the text (value and description) within each stat item */
+}
+
+/* Ensure each item takes up equal space */
+.stat-item {
+    flex: 1; 
+    padding: 0 10px;
+}
+
+/* Give the stat values a bit more visual weight */
+.stat-value {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Ensure each item takes up equal space */
+
+
+/* Give the stat values a bit more visual weight */
+
+/* --- Styling the About Me Services --- */
+
+/* 1. Update the parent container */
+/* --- Styling the About Me Services --- */
+
+/* 1. Update the parent container */
+.about-me-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    
+    /* ADD THESE TWO LINES */
+    position: relative; /* Acts as an anchor for the line */
+    padding-left: 30px; /* Makes space for the line */
+}
+
+/* 2. Add this new rule to create the line */
+.about-me-left::before {
+    content: ''; /* Required for a pseudo-element */
+    position: absolute; /* Positions it relative to the parent */
+    left: 0;
+    top: 0;
+    height: 100%; /* Make it the full height of the container */
+    width: 10px; /* The thickness of the line */
+    background-color: #FF6347; /* A dark-gray color */
+}
+
+/* --- Styling the individual service items (in AboutMe) --- */
+
+/* Update the alignment property and remove unnecessary width */
+.service-item {
+    display: flex;       
+    align-items: center; /* FIXED: Use 'center' to align vertically */
+    gap: 15px; 
+    margin: 10px 0;
+    width: auto; /* Change from 100% to auto or remove the line */
+}
+
+/* Clean up redundant/invalid property on service-title */
+.service-title {
+    font-weight: bold;
+    margin: 0;
+    /* REMOVE: align-items is invalid on this element */
+    /* align-items: center; */ 
+}
+.service-heading
+{
+  font-weight: bold;
+  align-self: start;
+}
+/* Ensure the icon itself is a bit bigger for visibility */
+.service-icon {
+    font-size: 1.5em; 
+    line-height: 1;
+}
+
+
+/* Ensure the Hero section creates a two-column, left-aligned layout */
+.hero-section { /* Assuming this is the class on your <section> in Hero.jsx */
+    display: flex;
+    justify-content: space-between; /* Pushes content and image apart */
+    align-items: center; /* Vertically centers the content and image */
+    text-align: left; /* Forces all text inside to align left */
+    padding: 100px 50px; /* Add extra vertical space */
+    max-width: 1100px; /* Sets a maximum width */
+    margin: 0 auto; /* A trick to center a block element */
+}
+
+/* Ensure the text content area takes up space */
+.hero-content {
+    flex: 1; /* Allows the text side to take up half the space */
+    padding-right: 50px;
+}
+
+.profile-photo {
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%; /* Makes the image round like in the design */
+}
+/* --- Styling the Hero Buttons --- */
+.hero-buttons {
+    display: flex; /* Makes the buttons sit side-by-side */
+    gap: 20px;     /* Adds space between the buttons */
+    margin-top: 20px; /* Adds space above the buttons */
+}
+
+.btn {
+    padding: 10px 20px; /* Adds space inside the button */
+    border: 2px solid #ffffff; /* A standard white border */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-weight: bold;
+}
+/* --- Styling the Hero Buttons --- */
+/* ... (your .hero-buttons and .btn rules) ... */
+
+.btn-primary {
+    background-color: #FF6347; /* A solid tomato/orange color */
+    border-color: #FF6347;     /* Make the border match the background */
+    color: #ffffff;            /* Ensure the text stays white */
+}
+.btn-secondary {
+  border-color: #FF6347;     /* Make the border match the background */
+    color: #ffffff; 
+}
+.hero-greeting {
+    font-size: 3em; /* Large */
+    color: #aaaaaa;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* This is the new class for the dot */
+.hero-dot {
+    color: #FF6347; /* Orange/Tomato color */
+    font-size: 1.2em; /* Makes the dot bigger relative to "Hello" */
+}
+
+.hero-name {
+    font-size: 2.5em; /* Slightly smaller than "Hello" */
+    font-weight: bold;
+    margin: 5px 0; 
+}
+
+.hero-title {
+    font-size: 4em; /* The largest text */
+    font-weight: bold;
+    margin: 0;
+}
+/* --- Styling for Section Titles --- */
+.section-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center; /* Center the "Projects" title */
+    position: relative; /* This is needed for the pseudo-element */
+    margin-bottom: 40px; /* Add space below the line */
+}
+
+/* This creates the orange line */
+.section-title::after {
+    content: ''; /* Required for a pseudo-element */
+    display: block;
+    width: 50px; /* The width of the line */
+    height: 4px; /* The thickness of the line */
+    background-color: #FF6347; /* Orange/Tomato color */
+    
+    /* This centers the line under the text */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px; /* Space between text and line */
+}
+/* --- Styling the Projects Grid --- */
+.projects-grid {
+    display: grid;
+    /* CHANGE THIS: */
+    grid-template-columns: 1fr 1fr 1fr; /* This creates three equal columns */
+    gap: 30px; /* This adds space between your project cards */
+}
+/* --- Styling the Project Card Image --- */
+.project-card img {
+    width: 150%; /* Makes the image fill the card's width */
+    height: 250px; /* Gives the image a fixed height */
+    object-fit: cover; /* This makes the image cover the space */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+    
+    /* ADD THESE TWO LINES */
+    position: relative; /* Acts as an anchor for the line */
+    padding-left: 30px; /* Makes space for the line */
+}
+
+/* 2. Add this new rule to create the line */
+.about-me-left::before {
+    content: ''; /* Required for a pseudo-element */
+    position: absolute; /* Positions it relative to the parent */
+    left: 0;
+    top: 0;
+    height: 100%; /* Make it the full height of the container */
+    width: 10px; /* The thickness of the line */
+    background-color: #FF6347; /* A dark-gray color */
+}
+
+/* --- Styling the individual service items (in AboutMe) --- */
+
+/* Update the alignment property and remove unnecessary width */
+.service-item {
+    display: flex;       
+    align-items: center; /* FIXED: Use 'center' to align vertically */
+    gap: 15px; 
+    margin: 10px 0;
+    width: auto; /* Change from 100% to auto or remove the line */
+}
+
+/* Clean up redundant/invalid property on service-title */
+.service-title {
+    font-weight: bold;
+    margin: 0;
+    /* REMOVE: align-items is invalid on this element */
+    /* align-items: center; */ 
+}
+.service-heading
+{
+  font-weight: bold;
+  align-self: start;
+}
+/* Ensure the icon itself is a bit bigger for visibility */
+.service-icon {
+    font-size: 1.5em; 
+    line-height: 1;
+}
+
+
+/* Ensure the Hero section creates a two-column, left-aligned layout */
+.hero-section { /* Assuming this is the class on your <section> in Hero.jsx */
+    display: flex;
+    justify-content: space-between; /* Pushes content and image apart */
+    align-items: center; /* Vertically centers the content and image */
+    text-align: left; /* Forces all text inside to align left */
+    padding: 100px 50px; /* Add extra vertical space */
+    max-width: 1100px; /* Sets a maximum width */
+    margin: 0 auto; /* A trick to center a block element */
+}
+
+/* Ensure the text content area takes up space */
+.hero-content {
+    flex: 1; /* Allows the text side to take up half the space */
+    padding-right: 50px;
+}
+
+.profile-photo {
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%; /* Makes the image round like in the design */
+}
+/* --- Styling the Hero Buttons --- */
+.hero-buttons {
+    display: flex; /* Makes the buttons sit side-by-side */
+    gap: 20px;     /* Adds space between the buttons */
+    margin-top: 20px; /* Adds space above the buttons */
+}
+
+.btn {
+    padding: 10px 20px; /* Adds space inside the button */
+    border: 2px solid #ffffff; /* A standard white border */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-weight: bold;
+}
+/* --- Styling the Hero Buttons --- */
+/* ... (your .hero-buttons and .btn rules) ... */
+
+.btn-primary {
+    background-color: #FF6347; /* A solid tomato/orange color */
+    border-color: #FF6347;     /* Make the border match the background */
+    color: #ffffff;            /* Ensure the text stays white */
+}
+.btn-secondary {
+  border-color: #FF6347;     /* Make the border match the background */
+    color: #ffffff; 
+}
+.hero-greeting {
+    font-size: 3em; /* Large */
+    color: #aaaaaa;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* This is the new class for the dot */
+.hero-dot {
+    color: #FF6347; /* Orange/Tomato color */
+    font-size: 1.2em; /* Makes the dot bigger relative to "Hello" */
+}
+
+.hero-name {
+    font-size: 2.5em; /* Slightly smaller than "Hello" */
+    font-weight: bold;
+    margin: 5px 0; 
+}
+
+.hero-title {
+    font-size: 4em; /* The largest text */
+    font-weight: bold;
+    margin: 0;
+}
+/* --- Styling for Section Titles --- */
+.section-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center; /* Center the "Projects" title */
+    position: relative; /* This is needed for the pseudo-element */
+    margin-bottom: 40px; /* Add space below the line */
+}
+
+/* This creates the orange line */
+.section-title::after {
+    content: ''; /* Required for a pseudo-element */
+    display: block;
+    width: 50px; /* The width of the line */
+    height: 4px; /* The thickness of the line */
+    background-color: #FF6347; /* Orange/Tomato color */
+    
+    /* This centers the line under the text */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px; /* Space between text and line */
+}
+/* --- Styling the Projects Grid --- */
+.projects-grid {
+    display: grid;
+    /* CHANGE THIS: */
+    grid-template-columns: 1fr 1fr 1fr; /* This creates three equal columns */
+    gap: 30px; /* This adds space between your project cards */
+}
+/* --- Styling the Project Card Image --- */
+.project-card img {
+    width: 100%; /* Makes the image fill the card's width */
+    height: 250px; /* Gives the image a fixed height */
+    object-fit: cover; /* This makes the image cover the space */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* --- 7. Contact Section & Footer Styles --- */
+
+/* This sets up the main two-column layout */
+.contact-section {
+    background-color: #1a1a1a; /* A slightly lighter dark background for the footer */
+    padding: 60px 50px;
+    max-width: 100%; /* Make the footer full-width */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1100px; /* But keep the content centered */
+    margin: 0 auto;
+}
+
+.contact-left, .contact-right {
+    flex: 1; /* Make both columns take up equal space */
+}
+
+/* --- Styling the Left (Info) Column --- */
+.contact-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    font-size: 1.1em;
+    color: #aaaaaa;
+    margin-bottom: 30px;
+}
+
+/* This aligns the email icon and text */
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+.social-text {
+    margin-left: 20px; /* This will create the gap */
+}
+
+/* THIS IS THE FIX for your huge icons */
+.contact-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain; /* Prevents image stretching */
+}
+
+/* This styles the container for the social icons */
+.contact-socials {
+    display: flex;
+    align-items: center; /* This vertically centers the icon and the text */
+    gap: 50px; /* This adds space between the icon and the text */
+    font-size: 1.1em;
+}
+
+
+/* --- Styling the Right (Form) Column --- */
+.contact-form {
+    display: flex;
+    flex-direction: column; /* Stack the form fields vertically */
+    gap: 15px;
+}
+
+/* This puts First and Last Name side-by-side */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    flex: 1; /* Make fields in a row share space */
+    display: flex;
+    flex-direction: column; /* Stack label on top of input */
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #aaaaaa;
+}
+
+/* Style for all text boxes */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+}
+
+/* Style for the 'Send' button */
+.contact-form .btn-primary {
+    align-self: flex-start; /* Don't stretch the button */
+    cursor: pointer;
+}
+
+/* --- Styling the very bottom copyright text --- */
+.footer-bottom {
+    text-align: center;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    max-width: 1100px;
+    color: #888;
+}
