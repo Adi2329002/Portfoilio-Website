@@ -4,8 +4,7 @@ Welcome to the official repository for my personal portfolio website. This proje
 
 ## 📸 Website Preview
 
-
-![Portfolio Screenshot]()
+![Alt text](/public/pasted)
 
 ---
 
