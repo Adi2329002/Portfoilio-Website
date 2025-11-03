@@ -7,6 +7,7 @@ import SkillBar from './components/SkillBar'
 import AboutMe from './components/AboutMe'
 import Project from './components/Project'
 import Contacts from './components/Contatcs'
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   
