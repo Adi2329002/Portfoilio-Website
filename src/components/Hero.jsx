@@ -7,9 +7,7 @@ const Hero = () => {
                 <h1 className="hero-title">CS Student</h1>
                 <div className="hero-buttons">
                    <a 
-                      href="https://www.linkedin.com/in/aditya-alok-bbb310299/"
-                      target="_blank"        
-                      rel="noopener noreferrer" 
+                      href="#contacts" 
                       className="btn btn-primary"
                      >
                      Got a project?
