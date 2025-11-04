@@ -49,8 +49,9 @@ function App() {
         <Contacts />
       </AnimatedSection>
 
+    
       <Analytics />
-      {/* <SpeedInsights /> You may have this too */}
+      <SpeedInsights />
     </>
   )
 }
