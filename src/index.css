@@ -10,7 +10,7 @@
   --form-bg: #333;
   --form-border: #555;
   --animation-opacity: 0.04
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body.light-theme {
@@ -390,6 +390,11 @@ section {
     margin-bottom: 15px;
     flex-grow: 1;
 }
+.project-card:hover {
+    transform: scale(1.03); /* Makes the card 3% larger */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Makes it animate smoothly */
+}
 
 /* --- 7. Contact Section & Footer Styles --- */
 .contact-section {
@@ -451,12 +456,16 @@ section {
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: color 0.3s ease;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+.contact-socials a:hover {
+    color: var(--primary-color); /* Changes text and icon to orange */
 }
 
 .form-row {
@@ -500,6 +509,17 @@ section {
     border-top: 1px solid var(--border-color);
     max-width: 1100px;
     color: var(--text-light);
+}
+/* --- 9. Scroll Animation Styles --- */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(20px); /* Start 20px lower */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0); /* Move back to original position */
 }
 
 /* --- 8. RESPONSIVE MOBILE STYLES --- */

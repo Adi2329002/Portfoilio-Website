@@ -7,6 +7,7 @@ import SkillBar from './components/SkillBar'
 import AboutMe from './components/AboutMe'
 import Project from './components/Project'
 import Contacts from './components/Contatcs'
+import AnimatedSection from './components/AnimatedSection';
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
@@ -29,13 +30,27 @@ function App() {
 
   return (
     <>
-      <Navbar toggleTheme={toggleTheme} theme={theme} />
-      <Hero />
-      <SkillBar />
-      <AboutMe />
-      <Project />
-      <Contacts />
- 
+      <Navbar toggleTheme={toggleTheme} theme={theme} /> 
+      <Hero /> 
+
+      <AnimatedSection>
+        <SkillBar />
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <AboutMe />
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Project />
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Contacts />
+      </AnimatedSection>
+
+      <Analytics />
+      {/* <SpeedInsights /> You may have this too */}
     </>
   )
 }
