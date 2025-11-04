@@ -9,7 +9,7 @@
   --primary-color: #FF6347;
   --form-bg: #333;
   --form-border: #555;
-  
+  --animation-opacity: 0.04
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -22,6 +22,7 @@ body.light-theme {
   --border-color: #dddddd;
   --form-bg: #f0f0f0;
   --form-border: #cccccc;
+  --animation-opacity: 0.05;
 }
 /* --- End of Variables --- */
 
@@ -162,6 +163,35 @@ section {
     padding: 100px 50px;
     max-width: 1100px;
     margin: 0 auto;
+    position: relative; /* Acts as an anchor for the animated element */
+    overflow: hidden;
+}
+  /* This creates the animated shape */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    width: 600px;  /* Size of the shape */
+    height: 600px; /* Size of the shape */
+    
+    /* This creates a soft, circular gradient (your orange color) */
+    background: radial-gradient(circle, var(--primary-color), transparent 40%);
+    
+    /* Make it very subtle, not distracting */
+    border-radius: 50%;
+    opacity: var(--animation-opacity); /* Use our new theme variable */
+    /* Start position (behind the profile photo) */
+    top: -100px;
+    right: -100px;
+    
+    /* Apply the animation */
+    animation: floatBackground 20s ease-in-out infinite;
+    z-index: 0; /* Put it behind the content */
+}
+
+/* We also need to make sure your content stays on top of it */
+.hero-content, .profile-photo {
+    position: relative;
+    z-index: 1; /* Keep content on z-index 1 or higher */
 }
 
 .hero-content {
@@ -565,7 +595,9 @@ section {
         flex-direction: column;
         text-align: center;
         gap: 30px;
+        
     }
+  
     .hero-content {
         text-align: center;
         padding-right: 0;
@@ -637,5 +669,20 @@ section {
     .contact-form .btn-primary {
         align-self: stretch;
         text-align: center;
+    }
+}
+/* --- 9. ANIMATIONS --- */
+@keyframes floatBackground {
+    0% {
+        /* Start position */
+        transform: translate(0, 0);
+    }
+    50% {
+        /* Middle position (moves slightly) */
+        transform: translate(-100px, 100px);
+    }
+    100% {
+        /* End position (back to start) */
+        transform: translate(0, 0);
     }
 }
