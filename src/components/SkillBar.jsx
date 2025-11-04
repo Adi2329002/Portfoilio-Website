@@ -6,7 +6,7 @@ const SkillBar = () => {
                 <li>CSS</li>
                 <li>Git</li>
                 <li>Java</li>
-                <li>Cpp</li>
+                <li>C++</li>
                 <li>Python</li>
                 <li>Rust</li>
                 <li>Esp32</li>
