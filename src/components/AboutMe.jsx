@@ -26,9 +26,6 @@ const AboutMe = () => {
                     seeking assistance with Defensive Hacking and Machine Learning. 
                     My current learning journey includes Rust, Machine Learning, Artificial Intelligence, 
                     and Defensive Hacking. Feel free to connect with me to discuss Cars, Books, and Technology.
-
-
-                    
                 </p>
                 <div className="stats-container">
                  <div className="stat-item">
