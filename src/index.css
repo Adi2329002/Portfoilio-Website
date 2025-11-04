@@ -57,27 +57,82 @@ a{
   display: flex;
   align-items: center;
 }
-
+/* --- Hamburger Menu Button (hidden on desktop) --- */
+.hamburger-btn, .close-btn {
+  display: none; /* Hide by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 .nav-links-lists {
   display: flex;
   gap: 30px;
 }
 
-.theme-toggle-btn {
-  background-color: var(--bg-secondary);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
-  padding: 8px 12px;
+/* --- Theme Toggle Switch Style --- */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;  /* Width of the switch */
+  height: 26px; /* Height of the switch */
   margin-left: 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 0.9em;
 }
-.theme-toggle-btn:hover {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: #ffffff;
+
+/* Hide the default HTML checkbox */
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider (the track) */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #555; /* Track color in dark mode */
+  transition: .4s;
+}
+
+/* The slider (the circle) */
+/* The slider (the circle) */
+.slider::before {
+  position: absolute;
+  content: "🌙"; /* ADDED: Default dark mode emoji */
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  
+  /* ADDED: Centering the emoji */
+  font-size: 12px;
+  text-align: center;
+  line-height: 18px; /* Should match the height */
+  color: #333; /* Color of the emoji */
+}
+
+/* This is what happens when the checkbox is "checked" (light mode) */
+input:checked + .slider {
+  background-color: var(--primary-color); /* Orange track in light mode */
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+  content: "☀️"; /* Move the circle to the right */
+}
+
+/* Rounded corners */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
 }
 
 /* --- 3. General Section Styles --- */
@@ -114,11 +169,12 @@ section {
     padding-right: 50px;
 }
 
+/* --- Profile Photo Fix --- */
 .profile-photo {
     max-width: 300px;
-    height: 300px; /* Added height for consistency */
-    object-fit: cover; /* Ensures image isn't squished */
-    border-radius: 50%; /* Fixed to 50% for a perfect circle */
+    height: 300px; /* Crucial: Make height equal to max-width for perfect circle */
+    object-fit: cover; /* Ensures image isn't squished and fills the space */
+    border-radius: 50%; /* FIXED: Now a perfect circle */
 }
 
 .hero-buttons {
@@ -132,7 +188,7 @@ section {
     border: 2px solid var(--text-color);
     border-radius: 5px;
     font-weight: bold;
-    color: var(--text-color); /* Added this for consistency */
+    color: var(--text-color);
 }
 
 .btn-primary {
@@ -178,7 +234,7 @@ section {
 .about-me-section {
     display: flex; 
     justify-content: space-between;
-    gap: 40px; /* Reduced gap */
+    gap: 40px;
     max-width: 1100px;
     margin: 0 auto;
   }
@@ -279,16 +335,20 @@ section {
     padding: 20px;
     border-radius: 8px;
     text-align: left;
-    display: flex; /* Added for layout */
-    flex-direction: column; /* Added for layout */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* CRUCIAL: Hides content that exceeds the element's box */
 }
 
+/* --- Project Card Image Fix --- */
 .project-card img, .inventory-pic {
-    width: 100%; /* Fixed from 150% */
+    width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain; /* This shows the whole image... */
+    background-color: var(--bg-color); /* ...and fills the empty space with your page's background */
     border-radius: 5px;
     margin-bottom: 15px;
+    flex-shrink: 0;
 }
 .project-card h3 {
     font-size: 1.5em;
@@ -298,7 +358,7 @@ section {
 .project-card p {
     color: var(--text-light);
     margin-bottom: 15px;
-    flex-grow: 1; /* Pushes button to bottom */
+    flex-grow: 1;
 }
 
 /* --- 7. Contact Section & Footer Styles --- */
@@ -342,7 +402,7 @@ section {
 }
 
 .social-text {
-    margin-left: 10px; /* Kept your rule */
+    margin-left: 10px;
 }
 
 .contact-icon {
@@ -353,14 +413,14 @@ section {
 
 .contact-socials {
     display: flex;
-    flex-direction: column; /* Stacked links */
-    gap: 15px; /* Space between links */
+    flex-direction: column;
+    gap: 15px;
     font-size: 1.1em;
 }
 .contact-socials a {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between icon and text */
+    gap: 10px;
 }
 
 .contact-form {
@@ -420,25 +480,85 @@ section {
     }
 
     /* --- Mobile Navbar --- */
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-    }
-    .navbar-links {
-        flex-direction: column; /* Stack links and button */
-        gap: 20px;
-        width: 100%;
-    }
-    .nav-links-lists {
-        flex-direction: column; /* Stack nav items */
-        text-align: center;
-        gap: 20px;
-    }
-    .theme-toggle-btn {
-        margin-left: 0; /* Remove side margin on mobile */
-    }
+    
+    /* --- NEW MOBILE NAVBAR STYLES --- */
+  
+  /* Make the navbar horizontal again, just logo and hamburger */
+  .navbar {
+    flex-direction: row;
+    padding: 20px;
+  }
+  
+  /* 1. Show the hamburger button on mobile */
+  .hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    gap: 4px; /* Creates space between the lines */
+  }
 
+  .hamburger-btn span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 2px;
+  }
+  
+  /* 2. Style the Mobile Menu (the container) */
+  .navbar-links {
+    /* This is the slide-out menu */
+    position: fixed; /* Cover the screen */
+    top: 0;
+    right: -100%; /* Start off-screen */
+    width: 80%;
+    height: 100vh; /* Full screen height */
+    background-color: var(--bg-secondary);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+
+    /* Stack the content (links, button) vertically */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Space out the items */
+    
+    transition: right 0.3s ease-in-out;
+  }
+  
+  /* 3. The "open" class makes the menu slide in */
+  .navbar-links.open {
+    right: 0;
+  }
+  
+  /* 4. Style the "X" close button */
+  .close-btn {
+    display: block; /* Show it */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.5em; /* Make "X" bigger */
+    color: var(--text-color);
+  }
+  
+  /* 5. Make the nav list vertical */
+  .nav-links-lists {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .nav-links-lists a {
+    font-size: 1.5em; /* Make mobile links bigger */
+  }
+  
+  /* 6. Fix the theme toggle position */
+  .theme-switch {
+    margin-left: 0;
+  }
+    .theme-toggle-btn {
+        margin-left: 0;
+    }
 
     /* --- Mobile Hero --- */
     .hero-section {
@@ -449,6 +569,10 @@ section {
     .hero-content {
         text-align: center;
         padding-right: 0;
+    }
+    .profile-photo {
+        max-width: 200px; /* Smaller on mobile */
+        height: 200px; /* Keep it square */
     }
     .hero-buttons {
         justify-content: center;
@@ -471,13 +595,13 @@ section {
     }
     .about-me-left {
         text-align: center;
-        padding-left: 15px; /* Reduce padding */
+        padding-left: 15px;
     }
     .about-me-left::before {
-        display: none; /* Hide vertical line */
+        display: none;
     }
     .service-item {
-        justify-content: center; /* Center items in the column */
+        justify-content: center;
     }
     .stats-container {
         flex-direction: column;
@@ -486,7 +610,7 @@ section {
 
     /* --- Mobile Projects --- */
     .projects-grid {
-        grid-template-columns: 1fr; /* Stack to 1 column */
+        grid-template-columns: 1fr;
     }
     .section-title {
         font-size: 2em;
@@ -499,19 +623,19 @@ section {
     }
     .form-row {
         flex-direction: column;
-        gap: 15px; /* Keep gap consistent */
+        gap: 15px;
     }
     .contact-left {
-        text-align: center; /* Center-align the left column */
+        text-align: center;
     }
     .contact-info-item {
-        justify-content: center; /* Center the email */
+        justify-content: center;
     }
     .contact-socials {
-        align-items: center; /* Center the social links */
+        align-items: center;
     }
     .contact-form .btn-primary {
-        align-self: stretch; /* Make button full-width */
+        align-self: stretch;
         text-align: center;
     }
 }
