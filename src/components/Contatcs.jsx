@@ -71,7 +71,7 @@ const Contacts = () => {
               />
               <span className="social-text">GitHub</span>
             </a>
-            <a href="https://www.linkedin.com/in/aditya-alok-bbb310299/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/adityaalok0088/" target="_blank" rel="noopener noreferrer">
               <img 
                 src="/linkedin.png" 
                 alt="LinkedIn Icon" 
