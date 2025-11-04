@@ -21,8 +21,8 @@ const AboutMe = () => {
                 <p className="about-paragraph">
                     I am a Computer Science student from India, 
                     currently focusing on Cyber Security, IoT, and 
-                    Machine Learning. I am eager to collaborate on projects r
-                    elated to Machine Learning, IoT, and Cyber Security. I am also 
+                    Machine Learning. I am eager to collaborate on projects related 
+                    to Machine Learning, IoT, and Cyber Security. I am also 
                     seeking assistance with Defensive Hacking and Machine Learning. 
                     My current learning journey includes Rust, Machine Learning, Artificial Intelligence, 
                     and Defensive Hacking. Feel free to connect with me to discuss Cars, Books, and Technology.
