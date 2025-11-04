@@ -546,7 +546,10 @@ section {
     height: 100vh; /* Full screen height */
     background-color: var(--bg-secondary);
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-
+      transition: right 0.3s ease-in-out;
+    
+    /* ADD THIS LINE */
+    z-index: 1000; /*
     /* Stack the content (links, button) vertically */
     flex-direction: column;
     justify-content: center;
