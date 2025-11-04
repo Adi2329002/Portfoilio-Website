@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
 import './App.css'
 import './components/Navbar'
 import Navbar from './components/Navbar'
@@ -11,11 +11,25 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
+  // ADD THEME STATE
+  const [theme, setTheme] = useState(() => 
+    window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  );
+
+  // ADD THE TOGGLE FUNCTION
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+  };
+
+  // ADD EFFECT TO UPDATE THE BODY CLASS
+  useEffect(() => {
+    document.body.className = theme + '-theme';
+  }, [theme]);
   
 
   return (
     <>
-      <Navbar />
+      <Navbar toggleTheme={toggleTheme} theme={theme} />
       <Hero />
       <SkillBar />
       <AboutMe />
