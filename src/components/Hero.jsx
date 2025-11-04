@@ -15,7 +15,7 @@ const Hero = () => {
         
         
                  <a 
-                   href="https://drive.google.com/file/d/1brEArrdOg0zyx1dr9XQHc_SF5PVm3-SE/view?usp=sharing" // ⬅️ Replace this with your Google Drive Share URL
+                   href="https://drive.google.com/file/d/1brEArrdOg0zyx1dr9XQHc_SF5PVm3-SE/view" // ⬅️ Replace this with your Google Drive Share URL
                    target="_blank" 
                    rel="noopener noreferrer" 
                    className="btn btn-secondary"

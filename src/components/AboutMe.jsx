@@ -19,12 +19,9 @@ const AboutMe = () => {
             <div className="about-me-right">
                 <h2 className="about-title">About me</h2>
                 <p className="about-paragraph">
-                    I'm a CS Student from India<br />
-                    🔭 I’m currently working on Many things<br />
-                    👯 I’m looking to collaborate on ML , IOT and Cyber Securities projects<br />
-                    🤝 I’m looking for help with Defensive Hacking<br />
-                    🌱 I’m currently learning Rust, ML and AI, Defensive hacking<br />
-                    💬 Ask me about any Cars,Books and Tech<br />
+                    I am a Computer Science student from India, currently focusing on Cyber Security, IoT, and Machine Learning. I am eager to collaborate on projects related to Machine Learning, IoT, and Cyber Security. I am also seeking assistance with Defensive Hacking and Machine Learning. My current learning journey includes Rust, Machine Learning, Artificial Intelligence, and Defensive Hacking. Feel free to connect with me to discuss Cars, Books, and Technology.
+
+
                     
                 </p>
                 <div className="stats-container">
