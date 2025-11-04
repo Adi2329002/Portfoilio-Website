@@ -30,7 +30,7 @@ const AboutMe = () => {
                 <div className="stats-container">
                  <div className="stat-item">
                     <strong className="stat-value">4</strong>
-                    <p className="stat-value">Completed Project </p>
+                    <p className="stat-value">Completed Projects </p>
                  </div>
                  <div className="stat-item">
                     <strong className="stat-value">1</strong>
