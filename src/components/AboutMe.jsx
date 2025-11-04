@@ -24,7 +24,7 @@ const AboutMe = () => {
                     👯 I’m looking to collaborate on ML , IOT and Cyber Securities projects<br />
                     🤝 I’m looking for help with Defensive Hacking<br />
                     🌱 I’m currently learning Rust, ML and AI, Defensive hacking<br />
-                    💬 Ask me about any thing about technology if know it I know it<br />
+                    💬 Ask me about any Cars,Books, Tech<br />
                     
                 </p>
                 <div className="stats-container">
