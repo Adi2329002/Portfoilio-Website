@@ -154,11 +154,11 @@ const Contacts = () => {
       
       {/* --- FOOTER: Synced with Resume Year --- */}
       <div className="mt-20 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600 font-mono text-[10px] uppercase tracking-widest">
-        <p>© 2026 Aditya Alok[cite: 1]. All rights reserved.</p>
+        <p>© 2026 Aditya Alok. All rights reserved.</p>
         <div className="flex gap-6">
           <span className="text-emerald-500/50 hover:text-emerald-500 cursor-default transition-colors">System.v4.0.0</span>
           <span className="text-gray-800">|</span>
-          <span>Bhubaneswar, Odisha [cite: 7]</span>
+          <span>Bhubaneswar, Odisha </span>
         </div>
       </div>
     </section>
