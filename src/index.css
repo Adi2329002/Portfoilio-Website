@@ -1,9 +1,25 @@
 @import "tailwindcss";
 
-/* Keeps your base background strictly dark */
 body {
-  background-color: #121212;
+  background-color: #0a0a0a; /* Deep dark slate/black */
+  /* This creates a subtle engineering matrix grid background */
+  background-image: 
+    linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px; /* Size of the grid squares */
   color: #ffffff;
   margin: 0;
   padding: 0;
+}
+
+/* Optional: Adds a cool custom tech scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #10b981; /* Emerald green */
+  border-radius: 4px;
 }
