@@ -1,65 +1,65 @@
-// src/components/Navbar.jsx
+import React, { useState } from 'react';
 
-// 1. IMPORT useState from React
-import { useState } from 'react';
-
-// 2. Accept the props (toggleTheme, theme)
-const Navbar = ({ toggleTheme, theme }) => {
-  
-  // 3. ADD NEW STATE to track if the mobile menu is open
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // 4. Function to toggle the mobile menu
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  // 5. Function to close menu when a link is clicked
-  const handleLinkClick = () => {
-    setIsMobileMenuOpen(false);
-  };
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="navbar">
-      <div className="navbar-logo">
-        <h1>Aditya Alok</h1>
-      </div>
-
-      {/* --- 6. NEW HAMBURGER BUTTON --- */}
-      {/* This will only be visible on mobile (due to CSS) */}
-      <button className="hamburger-btn" onClick={toggleMobileMenu} aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      {/* --- 7. UPDATED LINKS CONTAINER --- */}
-      {/* The 'open' class will be added/removed based on our state */}
-      <div className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
+    // Fixed to top, z-index high to stay above content, semi-transparent black with a blur effect
+    <nav className="fixed w-full top-0 z-50 bg-[#121212]/80 backdrop-blur-md border-b border-gray-800">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         
-        {/* We add an "X" button to close the menu */}
-        <button className="close-btn" onClick={toggleMobileMenu} aria-label="Close menu">
-          &times;
-        </button>
+        {/* Left Side: Logo */}
+        <a href="#home" className="text-xl font-bold text-white tracking-wider flex items-center gap-1">
+          <span className="text-emerald-500 font-mono">~/</span>
+          Aditya<span className="text-emerald-500">.</span>dev
+        </a>
 
-        <ul className="nav-links-lists">
-          {/* We add onClick to each link to close the menu */}
-          <li><a href="#about" onClick={handleLinkClick}>About</a></li>
-          <li><a href="#projects" onClick={handleLinkClick}>Projects</a></li>
-          <li><a href="#contacts" onClick={handleLinkClick}>Contacts</a></li>
-        </ul>
+        {/* Right Side: Desktop Nav Links */}
+        <div className="hidden md:flex items-center space-x-8">
+          <a href="#about" className="text-gray-400 hover:text-emerald-400 font-mono text-sm transition-colors">
+            ./about
+          </a>
+          <a href="#projects" className="text-gray-400 hover:text-emerald-400 font-mono text-sm transition-colors">
+            ./projects
+          </a>
+          <a href="#contacts" className="text-gray-400 hover:text-emerald-400 font-mono text-sm transition-colors">
+            ./contact
+          </a>
+        </div>
 
-        {/* The theme switch is now inside this container too */}
-        <label className="theme-switch" htmlFor="theme-toggle">
-          <input
-            type="checkbox"
-            id="theme-toggle"
-            onChange={toggleTheme}
-            checked={theme === 'light'}
-          />
-          <span className="slider round"></span>
-        </label>
+        {/* Mobile Menu Hamburger Button */}
+        <div className="md:hidden flex items-center">
+          <button 
+            onClick={() => setIsOpen(!isOpen)} 
+            className="text-gray-400 hover:text-emerald-400 focus:outline-none transition-colors"
+          >
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {isOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Nav Dropdown Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-[#1a1a1a] border-b border-gray-800 absolute w-full">
+          <div className="px-6 pt-2 pb-4 space-y-2 flex flex-col">
+            <a href="#about" onClick={() => setIsOpen(false)} className="block py-2 text-gray-400 hover:text-emerald-400 font-mono text-sm border-b border-gray-800/50">
+              ./about
+            </a>
+            <a href="#projects" onClick={() => setIsOpen(false)} className="block py-2 text-gray-400 hover:text-emerald-400 font-mono text-sm border-b border-gray-800/50">
+              ./projects
+            </a>
+            <a href="#contacts" onClick={() => setIsOpen(false)} className="block py-2 text-gray-400 hover:text-emerald-400 font-mono text-sm">
+              ./contact
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

@@ -1,58 +1,32 @@
-import { useState, useEffect } from 'react';
 import './App.css'
-import './components/Navbar'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import SkillBar from './components/SkillBar'
 import AboutMe from './components/AboutMe'
 import Project from './components/Project'
-import Contacts from './components/Contatcs'
-import AnimatedSection from './components/AnimatedSection';
+// IMPORTANT: Make sure this matches your exact file name. 
+// If your file is still named "Contatcs.jsx", change the import below to match!
+import Contacts from './components/Contatcs.jsx' 
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
-  // ADD THEME STATE
-  const [theme, setTheme] = useState(() => 
-    window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
-  );
-
-  // ADD THE TOGGLE FUNCTION
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
-  };
-
-  // ADD EFFECT TO UPDATE THE BODY CLASS
-  useEffect(() => {
-    document.body.className = theme + '-theme';
-  }, [theme]);
-  
-
   return (
-    <>
-      <Navbar toggleTheme={toggleTheme} theme={theme} /> 
-      <Hero /> 
-
-      <AnimatedSection>
+    // The pt-20 adds padding to the top so your fixed Navbar doesn't cover the Hero section
+    <div className="bg-[#121212] min-h-screen text-white pt-20"> 
+      <Navbar /> 
+      
+      <main>
+        <Hero /> 
         <SkillBar />
-      </AnimatedSection>
-
-      <AnimatedSection>
         <AboutMe />
-      </AnimatedSection>
-
-      <AnimatedSection>
         <Project />
-      </AnimatedSection>
-
-      <AnimatedSection>
         <Contacts />
-      </AnimatedSection>
+      </main>
 
-    
       <Analytics />
       <SpeedInsights />
-    </>
+    </div>
   )
 }
 
