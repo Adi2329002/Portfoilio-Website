@@ -73,7 +73,7 @@ const Hero = () => {
             init_contact()
           </a> 
           <a 
-            href="https://drive.google.com/file/d/1tVrvW5yYycQIRF9AO6zoldv_0SlDK5bi/view?usp=drivesdk" 
+            href="https://drive.google.com/file/d/14RKoHgdZ83goGyE3wfzkb8RsEy-d3r-6/view?usp=drivesdk" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="px-8 py-4 border border-gray-700 text-gray-300 hover:border-emerald-500 hover:text-emerald-400 transition-all duration-300 rounded-md font-mono text-sm bg-[#121212]/50 backdrop-blur-sm group"
